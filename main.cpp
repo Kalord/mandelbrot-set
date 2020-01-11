@@ -44,7 +44,10 @@ void display()
     glClear(GL_COLOR_BUFFER_BIT);
     
     glBegin(GL_POINTS);
-    for(int y = 0; y < 800; y++) //построение множества
+    /**
+     * Пострение множества
+     **/
+    for(int y = 0; y < 800; y++)
         for(int x = 0; x < 1200; x++)
         {
             Complex z(0, 0);
@@ -53,9 +56,12 @@ void display()
                 z = z * z + Complex((x - 600) / 180.0, (y - 400) / 180.0);
                 i++;              
             }
-            double r = 0.1 + i * 0.03 * 0.2; //расчет 
-            double g = 0.2 + i * 0.03 * 0.3; //значений
-            double b = 0.3 + i * 0.03 * 0.1; //для раскраски множества
+            /**
+             * Расчет значений для раскраски множества
+             **/
+            double r = 0.1 + i * 0.03 * 0.2;
+            double g = 0.2 + i * 0.03 * 0.3;
+            double b = 0.3 + i * 0.03 * 0.1;
             glColor3d(r, g, b);
             glVertex2d(x, y); 
         }
